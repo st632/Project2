@@ -5,7 +5,7 @@
 //POST index.php?page=accounts?action=login for logging a  user in and get the userID out of the session
 //POST index.php?page=accounts?action=logout  this would destroy the session and return the user to the homepage
 //GET  index.php?page=accounts?action=show  this would be to show the user profile and you get the userID out of session
-class homepageController extends http\controller
+class homepagecontroller extends http\controller
 {
     public static function show()
     {
