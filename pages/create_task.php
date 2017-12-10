@@ -17,13 +17,8 @@
 
 <body>
 
-<!--<?php
-//this is how you print something  $data contains the record that was selected on the table.
-//print_r($data);
-//$id= $data->id;
-echo '<br>';
-?>-->
-ID:<input type="text" name="id" value=""><br>
+<form action="index.php?page=tasks&action=store&id=" method="post" id="form1">
+
 Owner Email:<input type="text" name="owneremail" value=""><br>
 Owner ID:<input type="text" name="ownerid" value=""><br>
 Created Date:<input type="text" name="createddate" value=""><br>
@@ -31,9 +26,7 @@ Due Date:<input type="text" name="duedate" value=""><br>
 Message:<input type="text" name="message" value=""><br>
 Is Done:<input type="text" name="isdone" value=""><br>
 
-
-<form action="index.php?page=tasks&action=store" method="post" id="form1">
-    <button type="submit" form="form1" value="save">Create</button>
+<button type="submit" form="form1" value="create">Create</button>
 </form>
 
 
