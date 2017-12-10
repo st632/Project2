@@ -22,6 +22,7 @@ abstract class collection
         $class = static::$modelName;
         $statement->setFetchMode(\PDO::FETCH_CLASS, $class);
         $recordsSet = $statement->fetchAll();
+        //echo 'finished';
         return $recordsSet;
     }
     static public function findOne($id)
