@@ -95,7 +95,7 @@ class accountsController extends http\controller
     
     public static function back1()
     {
-      self::getTemplate('login_homepage', NULL);
+      self::getTemplate('user_homepage', NULL);
     }
     
     public static function logout()

@@ -12,7 +12,7 @@
   <center>
   <h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
   <h3><a href="index.php?page=accounts&action=show">Profile</a></h3>
-<h3><a href="index.php?page=accounts&action=logout">Logout</a></h3>
+  <h3><a href="index.php?page=accounts&action=logout">Logout</a></h3>
   
   
   <script src="js/scripts.js"></script>

@@ -14,6 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
+<style>
+.lk{
+float:right;
+margin:15px;
+}
+
+</style>
 
 <body>
 
@@ -22,6 +29,7 @@ $a='';
 $a.='<center>';
 $a.='<h2>Pending Tasks</h2><br>';
 $a.='<a href="index.php?page=tasks&action=create">Create New Task</a>';
+$a.='<div class="lk"><a href="index.php?page=accounts&action=back1">back</a></div>';
 if($data==FALSE){
   $a.='<br>No records found';
   $a.='</center>';
