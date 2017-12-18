@@ -1,56 +1,45 @@
 <?php
-namespace http;
-class processRequest
+final class account extends \database\model
 {
-    //this is the main function of the program to calculate the response to a get or post request
-    public static function createResponse()
+    public $id;
+    public $email;
+    public $fname;
+    public $lname;
+    public $phone;
+    public $birthday;
+    public $gender;
+    public $password;
+    protected static $modelName = 'account';
+    public static function getTablename()
     {
-        $requested_route = processRequest::getRequestedRoute();
-        //this print r shows the requested route
-        //print_r($requested_route);
-        //This is an important function to look at, it determines which controller to use
-        $controller_name = $requested_route->controller;
-        //this determines the method to call for the controller
-        $controller_method = $requested_route->method;
-        //these echo helps figure out the controller name and method
-        //echo $controller_name . '</br>';
-        //echo $controller_method . '</br>';
-        //I use a static for the controller because it doesn't have any properties
-        //echo "name ".$controller_name;
-        echo '<br>';
-        //echo "method ".$controller_method;
-        $controller_name::$controller_method();
+        $tableName = 'accounts';
+        return $tableName;
     }
-    //this function matches the request to the correct controller
-    public static function getRequestedRoute()
+    //to find a users tasks you need to create a method here.  Use $this->id to get the usersID For the query
+    public static function findTasks()
     {
-        //this is a helper function that needs to be improved because it does too much.  I will look for this in grading
-        $request_method = request::getRequestMethod();
-        $page = request::getPage();
-        $action = request::getAction();
-        //these are helpful for figuring out the action and method being requested
-        echo 'Action: ' . $action . '</br>';
-        echo 'Page: ' . $page . '</br>';
-        echo 'Request Method: ' . $request_method . '</br>';
-        //this gets the routes objects, you need to add routes to add pages and follow the template of the route specified
-        $routes = \routes::getRoutes();
-        //print_r($routes);
-        $foundRoute = NULL;
-        //this figures out which route matches the page being requested in the URL and returns it so that the controller and method can be called
-        foreach ($routes as $route) {
-          echo $route->action;
-            if ($route->page == $page && $route->http_method == $request_method && $route->action == $action) {
-                $foundRoute = $route;
-                break;
-            }
-        }
-        //print_r($foundRoute);
-        if (is_null($foundRoute)) {
-            controller::getTemplate('notfound');
-            exit;
-        } else {
-            return $foundRoute;
-        }
+        //I am temporarily putting a findall here but you should add a method to todos that takes the USER ID and returns their tasks.
+        $records = todos::findAll();
+        print_r($records);
+        return $records;
     }
+    //add a method to compare the passwords this is where bcrypt should be done and it should return TRUE / FALSE for login
+    public static function setPassword($password) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        return $password;
+    }
+    public function checkPassword($LoginPassword) {
+        return password_verify($LoginPassword, $this->password);
+    }
+    /*public function validate()
+    {
+        $valid = TRUE;
+        echo 'myemail: ' . $this->email;
+        if($this->email == '') {
+            $valid = FALSE;
+            echo 'nothing in email';
+        }
+        return $valid;
+    }*/
 }
 ?>

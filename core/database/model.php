@@ -15,7 +15,7 @@ abstract class model
         $statement->execute();
     }
     
-    public function lastID(){
+    public function getlastID(){
       $modelName = static::$modelName;
       $tableName = $modelName::getTablename();
       $db = dbConn::getConnection();
@@ -33,7 +33,7 @@ abstract class model
     private function insert()
     {
         //echo 'in insert';
-        $id=$this->lastID();
+        $id=$this->getlastID();
         $this->id=$id;
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
@@ -54,8 +54,6 @@ abstract class model
         $sql = 'UPDATE ' . $tableName . ' SET ';
         foreach ($array as $key => $value) {
             if (!empty($value)) {
-            echo '<br>';
-            echo $value;
                 $sql .= $comma . $key . ' = "' . $value . '"';
                 $comma = ", ";
             }

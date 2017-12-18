@@ -18,13 +18,20 @@
 <body>
 
 <?php
-//this is how you print something
-$text='';
-$text.='<centre>';
-$text.='<h1><a href="index.php?page=tasks&action=create">Create New Task</a></h1>';
-$text.='</center>';
-echo $text;
-print utility\htmlTable::genarateTableFromMultiArray($data);
+$a='';
+$a.='<center>';
+$a.='<h2>Pending Tasks</h2><br>';
+$a.='<a href="index.php?page=tasks&action=create">Create New Task</a>';
+if($data==FALSE){
+  $a.='<br>No records found';
+  $a.='</center>';
+  echo $a;
+}
+else{
+$a.=utility\htmlTable::genarateTableFromMultiArray($data);
+$a.='</center>';
+echo $a;
+}
 ?>
 
 

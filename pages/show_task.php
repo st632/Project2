@@ -17,12 +17,7 @@
 
 <body>
 
-<?php
-//this is how you print something  $data contains the record that was selected on the table.
-//print_r($data);
-//$id= $data->id;
-echo '<br>';
-?>
+<center>
 
 <form action="index.php?page=tasks&action=store&id=<?php echo $data->id; ?>" method="post" id="form1">
 ID:<input type="text" name="id" value="<?php echo $data->id;?>"><br>
@@ -37,7 +32,7 @@ Is Done:<input type="text" name="isdone" value="<?php echo $data->isdone;?>"><br
 </form>
 
 
-
+</center>
 
 <script src="js/scripts.js"></script>
 </body>

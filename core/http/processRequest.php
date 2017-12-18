@@ -17,7 +17,7 @@ class processRequest
         //echo $controller_method . '</br>';
         //I use a static for the controller because it doesn't have any properties
         //echo "name ".$controller_name;
-        echo '<br>';
+        //echo '<br>';
         //echo "method ".$controller_method;
         $controller_name::$controller_method();
     }
@@ -29,16 +29,16 @@ class processRequest
         $page = request::getPage();
         $action = request::getAction();
         //these are helpful for figuring out the action and method being requested
-        echo 'Action: ' . $action . '</br>';
-        echo 'Page: ' . $page . '</br>';
-        echo 'Request Method: ' . $request_method . '</br>';
+        //echo 'Action: ' . $action . '</br>';
+        //echo 'Page: ' . $page . '</br>';
+        //echo 'Request Method: ' . $request_method . '</br>';
         //this gets the routes objects, you need to add routes to add pages and follow the template of the route specified
         $routes = \routes::getRoutes();
         //print_r($routes);
         $foundRoute = NULL;
         //this figures out which route matches the page being requested in the URL and returns it so that the controller and method can be called
         foreach ($routes as $route) {
-          echo $route->action;
+          //echo $route->action;
             if ($route->page == $page && $route->http_method == $request_method && $route->action == $action) {
                 $foundRoute = $route;
                 break;

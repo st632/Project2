@@ -16,7 +16,7 @@ class accounts extends \database\collection
                 //echo 'a';
                 return FALSE;
             } else {
-                return $recordsSet;
+                return $recordsSet[0];
             }
     }
 }

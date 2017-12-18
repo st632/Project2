@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+<center>
 <form action="index.php?page=tasks&action=store&id=" method="post" id="form1">
 
 Owner Email:<input type="text" name="owneremail" value=""><br>
@@ -28,7 +28,7 @@ Is Done:<input type="text" name="isdone" value=""><br>
 
 <button type="submit" form="form1" value="create">Create</button>
 </form>
-
+</center>
 
 
 <script src="js/scripts.js"></script>

@@ -16,10 +16,8 @@
 </head>
 
 <body>
-<?php
-echo '<h1>hey</h1>';
-?>
 
+<center>
 <form action="index.php?page=accounts&action=store" method="post" id="form1">
     First name: <input type="text" name="fname" value=""><br>
     Last name: <input type="text" name="lname" value=""><br>
@@ -30,7 +28,7 @@ echo '<h1>hey</h1>';
     Password: <input type="password" name="password" value=""><br>
     <button type="submit" form="form1" value="Submit">Submit</button>
 </form>
-
+</center>
 
 <script src="js/scripts.js"></script>
 </body>
