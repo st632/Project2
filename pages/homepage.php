@@ -11,7 +11,6 @@
 body  {
     background-image: url("NJIT.jpg");
      background-repeat: no-repeat, repeat;
-     height: 200px;
     background-color: #cccccc;
 }
 </style>

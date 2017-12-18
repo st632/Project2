@@ -27,12 +27,12 @@ abstract class model
       $recordsSet =  $statement->fetchAll(\PDO::FETCH_ASSOC);
       $record=$recordsSet[0];
       $LastID= $record["MAX(id)"];
-      //echo $LastID;
+     
       return $LastID+1;
     }
     private function insert()
     {
-        //echo 'in insert';
+     
         $id=$this->getlastID();
         $this->id=$id;
         $modelName = static::$modelName;
@@ -42,7 +42,7 @@ abstract class model
         $columnString1=implode(',', $columnString);
         $valueString = "'".implode("','", $array)."'";
         $sql = 'INSERT INTO ' . $tableName . ' (' . $columnString1 . ') VALUES (' . $valueString . ')';
-        //echo $sql;
+     
         return $sql;
     }
     private function update()

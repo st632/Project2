@@ -153,7 +153,6 @@ class routes
         return $routes;
     }
 }
-//this is the route prototype object  you would make a factory to return this
 class route
 {
     public $page;
